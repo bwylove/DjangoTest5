@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="/static/booktest/jquery-1.12.4.min.js"></script>
+{#使用这种方法不能加载出省份信息，只能在线生成才可以<script src="/static/booktest/jquery-1.12.4.min.js"></script>#}
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
         $(function () {
             //查询省信息
             pro=$('#pro')
-            $.get('/area/0/',function (dic) {//{data:[[],[],[]]}
-                $.each(dic.data,function (index, item) {//[id,title]
+            $.get('/area/0/',function (dic) {
+                $.each(dic.data,function (index,item) {
                     pro.append('<option value="'+item[0]+'">'+item[1]+'</option>')
                 })
             })
