@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^uploadPic$',views.uploadPic,name='uploadPic'),
     url(r'^uploadHandle$',views.uploadHandle,name='uploadHandle'),
     url(r'^herolist/(\d+)/$',views.herolist,name='herolist'),
-    url(r'^area/$',views.area),
-    url(r'^area/(\d+)/$',views.area2),
+    url(r'^area/$',views.area,name='area'),
+    url(r'^pro/$',views.pro,name='pro'),
+    url(r'^city(\d+)/$',views.city,name='city'),
 ]

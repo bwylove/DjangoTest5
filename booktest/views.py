@@ -44,13 +44,16 @@ def herolist(request,pindex):
 #省市区选择
 def area(request):
     return render(request,'booktest/area.html')
-def area2(request,id):
-    id1=int(id)
-    if id1==0:
-        data=AreaInfo.objects.filter(parea__isnull=True)
-    else:
-        data=[{}]
+def pro(request):
+    prolist=AreaInfo.objects.filter(parea__isnull=True)
     list=[]
-    for area in data:
+    for area in prolist:
         list.append([area.id,area.title])
+    return JsonResponse({'data':list})
+
+def city(request,id):
+    citylist=AreaInfo.objects.filter(parea_id=id)
+    list=[]
+    for item in citylist:
+        list.append({'id':item.id,'title':item.title})
     return JsonResponse({'data':list})
