@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 """
 Django settings for DjangoTest5 project.
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'booktest',
+    'tinymce',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +81,7 @@ WSGI_APPLICATION = 'DjangoTest5.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test3',
+        'NAME': 'test',
         'USER':'admin',
         'PASSWORD':'123456',
         'HOST':'192.168.52.155',
@@ -128,3 +131,19 @@ STATICFILE_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
 MEDIA_ROOT=os.path.join(BASE_DIR,'static/media/')
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'width': 600,
+    'height': 400,
+}
+# 收索索引
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    }
+}
+
+#自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

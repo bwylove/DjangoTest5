@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from tinymce.models import HTMLField
 from django.db import models
 
 # Create your models here.
@@ -27,4 +27,7 @@ class HeroInfo(models.Model):
 class AreaInfo(models.Model):
     title=models.CharField(max_length=20)
     parea=models.ForeignKey('self',null=True,blank=True)
+
+class test(models.Model):
+    content=HTMLField()
 

@@ -57,3 +57,21 @@ def city(request,id):
     for item in citylist:
         list.append({'id':item.id,'title':item.title})
     return JsonResponse({'data':list})
+# 自定义文本编辑器
+def htmlEditor(request):
+    return render(request,'booktest/htmlEditor.html')
+def htmlEditorHandle(request):
+    html=request.POST['hcontent']
+    # 查询
+    # Test=test.objects.get(pk=1)
+    # Test.content=html
+    # Test.save()
+    # 添加
+    test1=test()
+    test1.content=html
+    test1.save()
+    context={'content':html}
+    return render(request,'booktest/htmlshow.html',context)
+# 全文检索及中文分词
+def mysearch(request):
+    return render(request,'booktest/mysearch.html')

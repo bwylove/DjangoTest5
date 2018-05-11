@@ -8,6 +8,7 @@ from models import *
 class BookInfoAdmin(admin.ModelAdmin):
     list_display = ['id','btitle','bput_date']
 
+admin.site.register(test)
 
 
 

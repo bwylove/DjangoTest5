@@ -18,5 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^',include('booktest.urls',namespace='booktest'))
+    url(r'^',include('booktest.urls',namespace='booktest')),
+    url(r'^tinymce',include('tinymce.urls')),
+    url(r'^search/', include('haystack.urls')),
 ]

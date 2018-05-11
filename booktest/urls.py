@@ -10,4 +10,7 @@ urlpatterns = [
     url(r'^area/$',views.area,name='area'),
     url(r'^pro/$',views.pro,name='pro'),
     url(r'^city(\d+)/$',views.city,name='city'),
+    url(r'^htmlEditor/$',views.htmlEditor,name='htmlEditor'),
+    url(r'^content/$',views.htmlEditorHandle,name='htmlEditorHandle'),
+    url(r'^mysearch/$',views.mysearch,name='mysearch'),
 ]
