@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'DjangoTest5.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'test3',
         'USER':'admin',
         'PASSWORD':'123456',
         'HOST':'192.168.52.155',
@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILE_DIRS=[
+STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
 MEDIA_ROOT=os.path.join(BASE_DIR,'static/media/')
